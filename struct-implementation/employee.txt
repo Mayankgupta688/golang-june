@@ -1,0 +1,17 @@
+// What are the Data parameter for an Employee
+
+empName: string
+empId: int16
+joiningData: date
+salary: int32
+emailId: string
+isMarried: bool
+
+address:
+    street: number
+    city: string
+    pincode: int32
+    country: string
+
+previousEmployersSalary: []int32
+

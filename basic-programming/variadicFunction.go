@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-func main1() {
+func variadicFunction() {
 	someFunction(1, 2, 3, 4, 5)
 	someFunction(1, 2, 3, 4, 5, 6, 7, 8)
 	someFunction(1, 2)

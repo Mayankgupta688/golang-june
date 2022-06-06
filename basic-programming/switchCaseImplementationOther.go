@@ -4,12 +4,7 @@ import (
 	"fmt"
 )
 
-// Director
-// VP
-// Manager
-// Employee
-
-func main() {
+func switchCaseImplementationOther() {
 	userdata := "Employee"
 
 	switch userdata {
