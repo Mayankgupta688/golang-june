@@ -27,3 +27,5 @@ func workingWithStruct() {
 	fmt.Println(employeeOne.empName)
 
 }
+
+

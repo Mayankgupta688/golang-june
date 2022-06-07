@@ -14,7 +14,7 @@ type EmployeeData struct {
 	empDesignation string
 }
 
-func main() {
+func conventionalStruct() {
 	employeeTwo := EmployeeStruct{
 		empName:        "Mayank",
 		empAge:         30,
@@ -22,7 +22,7 @@ func main() {
 	}
 
 	employeeOne := new(EmployeeData)
-	employeeOne.empAge = 10
+	(*employeeOne).empAge = 10
 	employeeOne.empDesignation = "hjdsfadha"
 	employeeOne.empName = "sdgasukg"
 
