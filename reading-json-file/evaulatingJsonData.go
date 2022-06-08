@@ -1,36 +1,54 @@
 package main
 
-import "fmt"
+import (
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+)
 
-type StockData struct {
-	code               string
-	message            string
-	company            string
-	pricechange        float64
-	pricepercentchange float64
+// Only the fields in Capital are the one that will be Unmarshaled
+
+type EmployeeStruct struct {
+	ID        string
+	CreatedAt string
+	Name      string
+	Avatar    string
 }
 
-// JSON Marshaling / UnMarshling
-
 func main() {
-	stockDetailsSBI := `{
-		"code": "200",
-		"message": "Success",
-		"company": "SBI",
-		"pricechange": "-1.0500",
-		"pricepercentchange": "-0.2265"
-	}`
+	var employeeNameArray []string
 
-	stockDetailsNalco := `{
-		"code": "200",
-		"message": "Success",
-		"company": "NALCO",
-		"pricechange": "-1.0500",
-		"pricepercentchange": "-0.2265"
-	}`
+	readFile("employeeList.json")
+	employeeDataByte := readFile("employeeList.json")
 
-	// Display Change value from the above Data
+	if len(employeeDataByte) > 0 {
+		var employeeList []EmployeeStruct
+		unmarshalError := unMarshalData(employeeDataByte, &employeeList)
 
-	fmt.Println(stockDetailsSBI)
-	fmt.Println(stockDetailsNalco)
+		if unmarshalError != nil {
+			fmt.Println("Error Parsing Data")
+		} else {
+
+			// Try Writing Function for Iteration as well
+
+			for _, emp := range employeeList {
+				employeeNameArray = append(employeeNameArray, emp.Name)
+			}
+
+			fmt.Println(employeeNameArray)
+		}
+	}
+}
+
+func readFile(fileName string) []byte {
+	employeeDataByte, err := ioutil.ReadFile("employeeList.json")
+	if err != nil {
+		return []byte("")
+	} else {
+		return employeeDataByte
+	}
+}
+
+func unMarshalData(byteData []byte, dataPointer *[]EmployeeStruct) error {
+	return json.Unmarshal(byteData, &dataPointer)
 }

@@ -1,0 +1,42 @@
+<list>
+    <users>
+        <user type="admin">
+            <name>Mayank</name>
+            <age>10</age>
+            <usertype>Admin</usertype>
+        </user>
+
+        <user type="application">
+            <name>Anshul</name>
+            <age>20</age>
+            <usertype>application</usertype>
+        </user>
+
+        <user type="sysadmin">
+            <name>Ankit</name>
+            <age>70</age>
+            <usertype>application</usertype>
+        </user>
+    </users>
+    <users>
+        <user type="admin">
+            <name>Mayank</name>
+            <age>10</age>
+            <usertype>Admin</usertype>
+        </user>
+
+        <user type="application">
+            <name>Anshul</name>
+            <age>20</age>
+            <usertype>application</usertype>
+        </user>
+
+        <user type="sysadmin">
+            <name>Ankit</name>
+            <age>70</age>
+            <usertype>application</usertype>
+        </user>
+    </users>
+</list>
+
+

@@ -1,6 +1,7 @@
 package main
 
 import "fmt"
+import "io/ioutil"
 
 func multipleValuesReturnFromFunction() {
 	a, _, c, d := getDataFromFunction()
