@@ -21,8 +21,7 @@ type EmployeeStruct struct {
 	Name string
 }
 
-func main() {
-
+func main1() {
 	http.HandleFunc("/", ShowEmployeeList)
 	http.ListenAndServe(":8000", nil)
 }
@@ -31,6 +30,7 @@ func ShowEmployeeList(writer http.ResponseWriter, request *http.Request) {
 	var dataToRender DataRendering
 	dataToRender.ShowBoldName = false
 	dataToRender.EmployeeList = getEmployees()
+
 	jsonData, _ := json.Marshal(dataToRender.EmployeeList)
 	fmt.Fprint(writer, string(jsonData))
 }
